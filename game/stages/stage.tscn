@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbsmuk40o24jr"]
+
+[ext_resource type="Script" uid="uid://ckk5tht6d8vb4" path="res://game/stages/stage.gd" id="1_gnmcd"]
+[ext_resource type="Script" uid="uid://d0iqys2psbgdu" path="res://core/classes/fnf_sprite_2d.gd" id="2_p75cs"]
+[ext_resource type="Texture2D" uid="uid://but0qtku5cro3" path="res://game/stages/default/stagefront.png" id="4_gnmcd"]
+[ext_resource type="Texture2D" uid="uid://o1s640b3oqgb" path="res://core/silhouette_gf.png" id="5_7b51v"]
+[ext_resource type="Texture2D" uid="uid://hhqdwy7d08t4" path="res://core/silhouette_bf.png" id="5_ej7ts"]
+[ext_resource type="Texture2D" uid="uid://bwsclponhe3a6" path="res://core/silhouette_dad.png" id="6_7b51v"]
+[ext_resource type="Texture2D" uid="uid://cisqib1cym6py" path="res://game/stages/default/stageback.png" id="6_7ckda"]
+[ext_resource type="Texture2D" uid="uid://dbsafwuusqn12" path="res://game/stages/default/stagecurtains.png" id="8_7ckda"]
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_gnmcd")
+metadata/_custom_type_script = "uid://bwdq22xkt6b1e"
+
+[node name="stageback" type="Node2D" parent="."]
+position = Vector2(24, -48)
+script = ExtResource("2_p75cs")
+texture = ExtResource("6_7ckda")
+scroll_scale = Vector2(0.85, 0.85)
+metadata/_custom_type_script = "uid://d0iqys2psbgdu"
+
+[node name="stagefront" type="Node2D" parent="."]
+position = Vector2(24, 392)
+script = ExtResource("2_p75cs")
+texture = ExtResource("4_gnmcd")
+scroll_scale = Vector2(0.9, 0.9)
+metadata/_custom_type_script = "uid://d0iqys2psbgdu"
+
+[node name="dj_pos" type="Sprite2D" parent="."]
+position = Vector2(-32, -112)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_7b51v")
+
+[node name="player_pos" type="Sprite2D" parent="."]
+position = Vector2(320, 80)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_ej7ts")
+
+[node name="opponent_pos" type="Sprite2D" parent="."]
+position = Vector2(-392, -88)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_7b51v")
+
+[node name="stagecurtains" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(-72, -320)
+scale = Vector2(0.85, 0.85)
+script = ExtResource("2_p75cs")
+texture = ExtResource("8_7ckda")
+scroll_scale = Vector2(1.2, 1.2)
+metadata/_custom_type_script = "uid://d0iqys2psbgdu"
+
+[node name="judge_spawner" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(80, -120)
+scale = Vector2(0.7, 0.7)

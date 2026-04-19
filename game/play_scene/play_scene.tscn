@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dh4fobbiel1cv"]
+
+[ext_resource type="Script" uid="uid://pwlh13n5jcbh" path="res://game/play_scene/play_scene.gd" id="1_ot0y2"]
+[ext_resource type="PackedScene" uid="uid://ihmvrl1nn75c" path="res://game/notes/strumline.tscn" id="3_ityjc"]
+[ext_resource type="PackedScene" uid="uid://djc0xavgi00no" path="res://game/ui/play_ui.tscn" id="5_21h8x"]
+
+[node name="PlayScene" type="Node2D"]
+script = ExtResource("1_ot0y2")
+
+[node name="inst" type="AudioStreamPlayer" parent="."]
+
+[node name="player_voices" type="AudioStreamPlayer" parent="."]
+
+[node name="opponent_voices" type="AudioStreamPlayer" parent="."]
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(58, 76)
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="play_ui" parent="hud" instance=ExtResource("5_21h8x")]
+
+[node name="player_strums" parent="hud" instance=ExtResource("3_ityjc")]
+position = Vector2(960, 96)
+
+[node name="opponent_strums" parent="hud" instance=ExtResource("3_ityjc")]
+position = Vector2(320, 96)
+
+[node name="judge_spawner" type="Node2D" parent="hud"]
+position = Vector2(768, 488)
+scale = Vector2(0.7, 0.7)
+
+[node name="countdown_spawner" type="Node2D" parent="hud"]
+position = Vector2(640, 360)
+
+[connection signal="finished" from="inst" to="." method="_on_inst_finished"]

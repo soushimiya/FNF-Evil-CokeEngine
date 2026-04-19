@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://djc0xavgi00no"]
+
+[ext_resource type="Script" uid="uid://dbuh2jt115g51" path="res://game/ui/play_ui.gd" id="1_5rt5x"]
+[ext_resource type="Texture2D" uid="uid://cwhbymxbsbgai" path="res://game/ui/assets/health_bar.png" id="2_27m8m"]
+[ext_resource type="PackedScene" uid="uid://f42vrpuof0jv" path="res://game/ui/health_icon.tscn" id="3_ierh6"]
+[ext_resource type="FontFile" uid="uid://cx7jfqkafu86f" path="res://core/fonts/vcr.ttf" id="4_vc4ol"]
+
+[node name="PlayUI" type="Node2D"]
+script = ExtResource("1_5rt5x")
+
+[node name="cinematic" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="cinematic"]
+offset_right = 1280.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="cinematic"]
+offset_top = 624.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="health_bar" type="TextureProgressBar" parent="."]
+offset_left = 340.0
+offset_top = 632.0
+offset_right = 941.0
+offset_bottom = 651.0
+max_value = 2.0
+step = 0.001
+value = 1.0
+fill_mode = 1
+texture_under = ExtResource("2_27m8m")
+texture_progress = ExtResource("2_27m8m")
+tint_under = Color(1, 0, 0, 1)
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="icon_p1" parent="." instance=ExtResource("3_ierh6")]
+position = Vector2(672, 632)
+player = true
+
+[node name="icon_p2" parent="." instance=ExtResource("3_ierh6")]
+position = Vector2(600, 632)
+
+[node name="score_text" type="RichTextLabel" parent="."]
+offset_top = 672.0
+offset_right = 1280.0
+offset_bottom = 696.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("4_vc4ol")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Score: 0 // Misses: 0 // Accuracy: 100%"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1

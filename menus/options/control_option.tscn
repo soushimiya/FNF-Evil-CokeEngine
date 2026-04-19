@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://blvbmawoy8p0w"]
+
+[ext_resource type="Script" uid="uid://ciyqbode4aq4l" path="res://menus/options/control_option.gd" id="1_4l3m1"]
+[ext_resource type="PackedScene" uid="uid://drkcrk6tfv4hb" path="res://game/ui/keybound_item.tscn" id="3_4l3m1"]
+
+[node name="ControlOption" type="Node2D"]
+script = ExtResource("1_4l3m1")
+
+[node name="rect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.513726)
+
+[node name="items" type="Node2D" parent="."]
+position = Vector2(320, 0)
+
+[node name="accept" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 112)
+bind_name = "Accept"
+target_bind = "ui_accept"
+
+[node name="exit" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 144)
+bind_name = "Exit"
+target_bind = "ui_exit"
+
+[node name="u_left" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 200)
+bind_name = "UI Left"
+target_bind = "ui_left"
+
+[node name="u_down" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 240)
+bind_name = "UI Down"
+target_bind = "ui_down"
+
+[node name="u_up" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 280)
+bind_name = "UI Up"
+target_bind = "ui_up"
+
+[node name="u_right" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 320)
+bind_name = "UI Right"
+target_bind = "ui_right"
+
+[node name="n_left" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 376)
+bind_name = "Note Left"
+target_bind = "note_left"
+
+[node name="n_down" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 416)
+bind_name = "Note Down"
+target_bind = "note_down"
+
+[node name="n_up" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 456)
+bind_name = "Note Up"
+target_bind = "note_up"
+
+[node name="n_right" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 496)
+bind_name = "Note Right"
+target_bind = "note_right"
+
+[node name="volup" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 552)
+bind_name = "Volume Up"
+target_bind = "volume_up"
+
+[node name="voldown" parent="items" instance=ExtResource("3_4l3m1")]
+position = Vector2(320, 592)
+bind_name = "Volume Down"
+target_bind = "volume_down"

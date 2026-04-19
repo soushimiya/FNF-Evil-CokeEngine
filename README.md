@@ -5,13 +5,13 @@ That one my cancelled engine "COKE Engine" but fucking fucking EVIL!!!!!!
 
 ## Features
 ### Cool FPS Counter (Absolutely not based on the Codename Engine trust me pls)
-<img src="_extra/docs/debugFull.png" width="250"/>
+<img src="_extra/docs/debug_full.png" width="250"/>
 
 ### Modernized Options Screen
 <img src="_extra/docs/options.png" width="500"/>
 
 ### Fancy Pause Screen
-<img src="_extra/docs/fancyPause.png" width="500"/>
+<img src="_extra/docs/fancy_pause.png" width="500"/>
 
 ### Almost all the gameplay customization you need is included!
 downscroll, middlescroll, scroll speed multiplier....
@@ -21,10 +21,10 @@ downscroll, middlescroll, scroll speed multiplier....
 ### Object-oriented Lua Scripting ~~(so its better than Psych Engine)~~
 Most of the characters, some stages, events etc are loaded using lua.
 
-<img src="_extra/docs/luaScripting.png" width="500"/>
+<img src="_extra/docs/lua_scripting.png" width="500"/>
 
 ### Godot hardcode support rivals semi-Softcoded luas
-<img src="_extra/docs/hardcodeStage.png" width="500"/>
+<img src="_extra/docs/hardcode_stage.png" width="500"/>
 
 ### A fully layered sandbox system to aid in mod development
 <img src="_extra/docs/sandbox.png" width="150"/>

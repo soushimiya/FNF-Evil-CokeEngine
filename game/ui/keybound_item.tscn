@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://drkcrk6tfv4hb"]
+
+[ext_resource type="Script" uid="uid://b2wx3q1s8kfmj" path="res://game/ui/keybound_item.gd" id="1_ci4xq"]
+
+[node name="keybound_item" type="Node2D"]
+script = ExtResource("1_ci4xq")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="bound_name" type="Label" parent="."]
+offset_left = -208.0
+offset_top = -24.0
+offset_right = -9.0
+offset_bottom = 18.0
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "・Bind Name:"
+
+[node name="key_name" type="Label" parent="."]
+offset_left = 64.0
+offset_top = -24.0
+offset_right = 256.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 0.966667, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "UNKNOWN"
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

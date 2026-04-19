@@ -1,0 +1,275 @@
+[gd_scene load_steps=5 format=3 uid="uid://1l3ufs44mtgs"]
+
+[ext_resource type="Script" uid="uid://cqyuhnkjbyg67" path="res://menus/options/option_menu.gd" id="1_fp5r5"]
+[ext_resource type="Texture2D" uid="uid://cf775kpd18ark" path="res://menus/main_menu/menu_desat.png" id="2_ij5j7"]
+[ext_resource type="Texture2D" uid="uid://et1fvpcmib5t" path="res://menus/checker.png" id="3_2rvot"]
+[ext_resource type="SpriteFrames" uid="uid://b4hoikbjklcbp" path="res://menus/options/renders/bf.xml" id="3_ij5j7"]
+
+[node name="OptionMenu" type="Node2D"]
+script = ExtResource("1_fp5r5")
+metadata/_custom_type_script = "uid://r60w6aww8gaq"
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(0.360784, 0.333333, 1, 1)
+position = Vector2(640, 360)
+texture = ExtResource("2_ij5j7")
+
+[node name="checker" type="Parallax2D" parent="."]
+modulate = Color(1, 1, 1, 0.0509804)
+scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(256, 256)
+repeat_times = 24
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="checker"]
+position = Vector2(-3.05176e-05, -1400)
+texture = ExtResource("3_2rvot")
+
+[node name="render" type="AnimatedSprite2D" parent="."]
+position = Vector2(304, 552)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("3_ij5j7")
+animation = &"idle"
+frame = 18
+frame_progress = 1.0
+
+[node name="tab" type="TabContainer" parent="."]
+offset_left = 672.0
+offset_top = 24.0
+offset_right = 1248.0
+offset_bottom = 704.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+current_tab = 2
+tab_focus_mode = 1
+
+[node name="Gameplay" type="TabBar" parent="tab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="downscroll" type="CheckBox" parent="tab/Gameplay"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 14.0
+offset_right = 179.0
+offset_bottom = 48.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Downscroll"
+
+[node name="downscroll_desc" type="Label" parent="tab/Gameplay/downscroll"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 519.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "If checked, this will make the notes move downwards."
+
+[node name="middlescroll" type="CheckBox" parent="tab/Gameplay"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 70.0
+offset_right = 178.0
+offset_bottom = 104.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Middlescroll"
+
+[node name="middlescroll_desc" type="Label" parent="tab/Gameplay/middlescroll"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 448.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "If checked, this will make the notes get centered."
+
+[node name="ghost_tap" type="CheckBox" parent="tab/Gameplay"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 184.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Ghost Tapping"
+
+[node name="ghost_tap_desc" type="Label" parent="tab/Gameplay/ghost_tap"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 448.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "If checked, you won't get misses from pressing keys
+while there are no notes able to be hit."
+
+[node name="auto_pause" type="CheckBox" parent="tab/Gameplay"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 246.0
+offset_right = 190.0
+offset_bottom = 280.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Auto Pause"
+
+[node name="auto_pause_desc" type="Label" parent="tab/Gameplay/auto_pause"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 448.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "If checked, the game automatically pauses if
+the screen isn't on focus."
+
+[node name="Appearance" type="TabBar" parent="tab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="vsync" type="Label" parent="tab/Appearance"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 113.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "・V-Sync"
+
+[node name="vsync_option" type="OptionButton" parent="tab/Appearance/vsync"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = -3.0
+offset_right = 218.0
+offset_bottom = 20.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+flat = true
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Addaptive"
+popup/item_2/id = 2
+
+[node name="vsync_desc" type="Label" parent="tab/Appearance/vsync"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 24.0
+offset_right = 514.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "If enabled, game will attempt to match framerate with
+your monitor."
+
+[node name="flashing" type="CheckBox" parent="tab/Appearance"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 102.0
+offset_right = 212.0
+offset_bottom = 136.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Flashing Lights"
+
+[node name="flashing_desc" type="Label" parent="tab/Appearance/flashing"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 519.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "If disabled, it will dampen flashing effects.
+Useful for people with photosensitive epilepsy."
+
+[node name="debug_counter_type" type="Label" parent="tab/Appearance"]
+layout_mode = 2
+offset_left = 31.0
+offset_top = 190.0
+offset_right = 227.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "・Debug Counter Type"
+
+[node name="debug_counter_type_option" type="OptionButton" parent="tab/Appearance/debug_counter_type"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = -3.0
+offset_right = 333.0
+offset_bottom = 20.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+flat = true
+selected = 1
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Full"
+popup/item_1/id = 1
+popup/item_2/text = "Simple"
+popup/item_2/id = 2
+
+[node name="debug_counter_type_desc" type="Label" parent="tab/Appearance/debug_counter_type"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 24.0
+offset_right = 514.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 15
+text = "Set the amount of information displayed by the FPS counter"
+
+[node name="Misc" type="TabBar" parent="tab"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="edit_controls" type="Button" parent="tab/Misc"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 544.0
+offset_bottom = 56.0
+text = "Edit Controls"
+
+[connection signal="tab_changed" from="tab" to="." method="_on_tab_tab_changed"]
+[connection signal="pressed" from="tab/Misc/edit_controls" to="." method="_on_edit_controls_pressed"]
