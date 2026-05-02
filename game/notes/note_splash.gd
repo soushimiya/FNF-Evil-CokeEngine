@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 func start(note:Note):
-	self.sprite_frames = load("res://game/play_ui/assets/" + note.splash + ".xml")
+	self.sprite_frames = load("res://game/ui/assets/" + note.splash + ".xml")
 	offset = Vector2(-38, -47)
 
 	var random = RandomNumberGenerator.new().randi_range(1, 2)

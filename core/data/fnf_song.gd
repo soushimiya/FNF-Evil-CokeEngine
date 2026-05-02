@@ -38,7 +38,7 @@ var charts:Dictionary:
 		if charts.size() <= 0:
 			for diff in difficulties:
 				var d:Dictionary = default_chart
-				var chart_path = "res://game/levels/" + self.id + "/chart/" + diff + ".json"
+				var chart_path = "res://game/charts/" + self.id + "/chart/" + diff + ".json"
 				if FileAccess.file_exists(chart_path):
 					d = JSON.parse_string(FileAccess.get_file_as_string(chart_path))
 				charts[diff] = d

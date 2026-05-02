@@ -8,7 +8,7 @@ enum PlayMode
 	CHARTER
 }
 
-static var instance
+static var instance:PlayScene
 
 static var playlist:Array = []
 static var song:FNFSong:
@@ -214,22 +214,22 @@ func start_countdown():
 		match cur_countdown:
 			0:
 				GlobalSound.play_sound("countdown/onyourmark")
-				count_sprite.texture = load("res://game/play_ui/assets/countdown/onyourmark.png")
+				count_sprite.texture = load("res://game/ui/assets/countdown/onyourmark.png")
 				
 				player.idle()
 				opponent.idle()
 			1:
 				GlobalSound.play_sound("countdown/ready")
-				count_sprite.texture = load("res://game/play_ui/assets/countdown/ready.png")
+				count_sprite.texture = load("res://game/ui/assets/countdown/ready.png")
 			2:
 				GlobalSound.play_sound("countdown/set")
-				count_sprite.texture = load("res://game/play_ui/assets/countdown/set.png")
+				count_sprite.texture = load("res://game/ui/assets/countdown/set.png")
 				
 				player.idle()
 				opponent.idle()
 			3:
 				GlobalSound.play_sound("countdown/go")
-				count_sprite.texture = load("res://game/play_ui/assets/countdown/go.png")
+				count_sprite.texture = load("res://game/ui/assets/countdown/go.png")
 			4:
 				countdown_timer.stop()
 				$hud/countdown_spawner.queue_free()
@@ -387,7 +387,7 @@ func spawn_judgement_sprite(judge:String):
 
 	var judge_sprite = Sprite2D.new()
 	judge_sprite.scale = Vector2(1.15, 1.15)
-	judge_sprite.texture = load("res://game/play_ui/assets/judgements/" + judge + ".png")
+	judge_sprite.texture = load("res://game/ui/assets/judgements/" + judge + ".png")
 	judge_spawner.add_child(judge_sprite)
 
 	var spr_tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
@@ -397,7 +397,7 @@ func spawn_judgement_sprite(judge:String):
 	spr_tween.tween_property(judge_sprite, "position:y", judge_sprite.position.y + 140, (conductor.crotchet / 1000)*2.3)
 
 	if combo > 0:
-		var combo_display = preload("res://game/play_ui/combo_display.tscn").instantiate()
+		var combo_display = preload("res://game/ui/combo_display.tscn").instantiate()
 		combo_display.scale = Vector2(0.8, 0.8)
 		combo_display.number = self.combo
 		combo_display.global_position = Vector2(judge_sprite.global_position.x, judge_sprite.global_position.y + 200)
@@ -410,8 +410,8 @@ func spawn_judgement_sprite(judge:String):
 
 func list_global_script() -> Array:
 	var final_array = []
-	if DirAccess.dir_exists_absolute("res://core/classes/"):
-		var files = DirAccess.get_files_at("res://core/classes/")
+	if DirAccess.dir_exists_absolute("res://game/scripts/global"):
+		var files = DirAccess.get_files_at("res://game/scripts/global/")
 		for file in files:
 			if file.ends_with(".lua"):
 				final_array.push_back(file.split(".lua")[0])

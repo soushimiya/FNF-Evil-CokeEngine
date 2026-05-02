@@ -37,7 +37,7 @@ func _init(time:float, id:int, sus_length:float) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sprite_frames = load("res://game/play_ui/assets/NOTE_assets.xml")
+	sprite_frames = load("res://game/ui/assets/NOTE_assets.xml")
 	scale = Vector2(default_scale, default_scale)
 	
 	match note_data:

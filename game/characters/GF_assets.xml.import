@@ -3,12 +3,12 @@
 importer="com.what-is-a-git.godot-sparrow-importer"
 type="SpriteFrames"
 uid="uid://dbh1i85tqremg"
-path="res://.godot/imported/GF_assets.xml-4f7f32219d01f4852e2b4b1dfb20c598.res"
+path="res://.godot/imported/GF_assets.xml-405f84c0653cec84c44eea9c633635dc.res"
 
 [deps]
 
-source_file="res://game/characters/gf/GF_assets.xml"
-dest_files=["res://.godot/imported/GF_assets.xml-4f7f32219d01f4852e2b4b1dfb20c598.res"]
+source_file="res://game/characters/GF_assets.xml"
+dest_files=["res://.godot/imported/GF_assets.xml-405f84c0653cec84c44eea9c633635dc.res"]
 
 [params]
 

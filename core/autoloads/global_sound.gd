@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func play_sound(path):
 	stop_sound()
-	sound_player.stream = load("res://core/audio/sounds/" + path + ".ogg")
+	sound_player.stream = load("res://core/audio/" + path + ".ogg")
 	sound_player.play()
 
 func play_sound_raw(data):

@@ -19,13 +19,11 @@ const default_data = {
 
 static func get_character(char:String):
 	var data = default_data.duplicate(true)
-	var character_path = "res://game/characters/" + char + "/" + char + ".lua"
-	if !ResourceLoader.exists(character_path):
+	if !ResourceLoader.exists("res://game/scripts/characters/" + char + ".lua"):
 		char = "bf"
-		character_path = "res://game/characters/bf/bf.lua"
 	
 	data.id = char
-	var lua_script = LuaModule.new(character_path)
+	var lua_script = LuaModule.new("characters/" + char)
 	for key in data.keys():
 		if key != "id":
 			lua_script.lua.globals[key] = data[key]

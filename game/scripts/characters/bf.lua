@@ -1,4 +1,4 @@
-texture = "res://game/characters/bf/BOYFRIEND"
+texture = "res://game/characters/BOYFRIEND"
 position = Vector2(0, 0)
 camera_position = Vector2(0, -50)
 

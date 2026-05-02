@@ -5,14 +5,15 @@ var lua:LuaState = null
 var script_path = ""
 
 func _init(path:String) -> void:
-	script_path = path
+	script_path = "res://game/scripts/%s.lua" % path
 	if FileAccess.file_exists(script_path):
-		_initLua()
+		_init_lua()
 	else:
 		print("Failed to Load Script File from: " + script_path)
+		self.queue_free()
 
 # Initalize LuaState and adding Variables and uhh idk!
-func _initLua():
+func _init_lua():
 	lua = LuaState.new()
 	lua.open_libraries()
 

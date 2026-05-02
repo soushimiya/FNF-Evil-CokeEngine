@@ -3,12 +3,12 @@
 importer="com.what-is-a-git.godot-sparrow-importer"
 type="SpriteFrames"
 uid="uid://cqe7avfkmepra"
-path="res://.godot/imported/BOYFRIEND.xml-a759ecb193808e8c9c9625652a9156b5.res"
+path="res://.godot/imported/BOYFRIEND.xml-3af2eb571fef9896a8262cb84d69c600.res"
 
 [deps]
 
-source_file="res://game/characters/bf/BOYFRIEND.xml"
-dest_files=["res://.godot/imported/BOYFRIEND.xml-a759ecb193808e8c9c9625652a9156b5.res"]
+source_file="res://game/characters/BOYFRIEND.xml"
+dest_files=["res://.godot/imported/BOYFRIEND.xml-3af2eb571fef9896a8262cb84d69c600.res"]
 
 [params]
 

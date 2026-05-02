@@ -9,6 +9,6 @@ var number:int = 0:
 		var str_num = str(value)
 		for i in str_num.length():
 			var spr = Sprite2D.new()
-			spr.texture = load("res://game/play_ui/assets/combo/" + str_num.substr(i, 1) + ".png")
+			spr.texture = load("res://game/ui/assets/combo/" + str_num.substr(i, 1) + ".png")
 			self.add_child(spr)
 			spr.position.x = 100*i
