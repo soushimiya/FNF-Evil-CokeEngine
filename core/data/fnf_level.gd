@@ -20,7 +20,7 @@ var level_name:String = ""
 func setup(name:String) -> void:
 	level_name = name
 	for d in songs:
-		display_songs.push_back(d.name)
+		display_songs.push_back(d.display_name)
 
 	if FileAccess.file_exists("res://game/levels/" + name + ".lua"):
 		lua_script = LuaModule.new("res://game/levels/" + name + ".lua")

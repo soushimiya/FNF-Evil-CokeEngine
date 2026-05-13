@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FNFLevel" load_steps=7 format=3 uid="uid://b1n5njm28tsrj"]
+[gd_resource type="Resource" script_class="FNFLevel" format=3 uid="uid://b1n5njm28tsrj"]
 
 [ext_resource type="Script" uid="uid://dit0xflq4q0gy" path="res://core/data/fnf_level.gd" id="1_aapu1"]
 [ext_resource type="SpriteFrames" uid="uid://c87cfoicfkckq" path="res://menus/story_mode/props/gf.xml" id="1_v4jj7"]
@@ -6,14 +6,11 @@
 [ext_resource type="SpriteFrames" uid="uid://bh1x8oya6rovn" path="res://menus/story_mode/props/dad.xml" id="2_phqyd"]
 [ext_resource type="SpriteFrames" uid="uid://b3fl3mp1sfc6n" path="res://menus/story_mode/props/bf.xml" id="3_c0d6f"]
 [ext_resource type="Texture2D" uid="uid://cnxvh2kx0kt1i" path="res://menus/story_mode/title/week1.png" id="4_1nfpa"]
+[ext_resource type="Resource" uid="uid://4tcvecfeyywb" path="res://game/charts/stress-pico/data.tres" id="6_u8rkb"]
 
 [resource]
 script = ExtResource("1_aapu1")
 title = "Daddy Dearest"
 texture = ExtResource("4_1nfpa")
-opponent_prop = ExtResource("2_phqyd")
-player_prop = ExtResource("3_c0d6f")
-dj_prop = ExtResource("1_v4jj7")
-songs = Array[ExtResource("2_4i86q")]([])
-difficulties = Array[String](["easy", "normal", "hard"])
+songs = Array[ExtResource("2_4i86q")]([ExtResource("6_u8rkb")])
 metadata/_custom_type_script = "uid://dit0xflq4q0gy"

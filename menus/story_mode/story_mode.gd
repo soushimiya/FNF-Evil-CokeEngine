@@ -41,28 +41,29 @@ func _ready() -> void:
 	DiscordData.set_rpc("In Story Mode Menu")
 	if !GlobalSound.music_player.playing:
 		GlobalSound.play_music("freaky_menu")
-	# this literally fucking sucks what?????
-	if FileAccess.file_exists("res://game/levels/_list.txt"):
-		var rawlist = FileAccess.get_file_as_string("res://game/levels/_list.txt")
-		for level in rawlist.split("\n", false):
-			if level.begins_with("#"):
-				continue
-			if FileAccess.file_exists("res://game/levels/" + level + ".tres"):
-				var data = load("res://game/levels/" + level + ".tres")
-				if data.songs.size() > 0:
-					data.setup(level)
-					level_list.push_back(data)
 
 	if DirAccess.dir_exists_absolute("res://game/levels/"):
 		var files = DirAccess.get_files_at("res://game/levels/")
 		for file in files:
 			var level = file.split(".tres")[0]
-			if file.begins_with("_") || level_list.has(level) || !file.ends_with(".tres"):
+			if level_list.has(level) || !file.ends_with(".tres"):
 				continue
 			var data = load("res://game/levels/" + file)
 			if data.songs.size() > 0:
 				data.setup(level)
 				level_list.push_back(data)
+	
+	level_list.sort()
+	level_list.sort_custom(func(a, b):
+		var rawlist = FileAccess.get_file_as_string("res://game/levels/_list.txt")
+		var list:Array[String] = rawlist.split("\n", false)
+		if list.has(a.level_name):
+			if list.has(b.level_name):
+				return list.find(a.level_name) > list.find(b.level_name)
+			else:
+				return true
+		return false
+	)
 
 	for i in level_list.size():
 		var spr = Sprite2D.new()
@@ -89,12 +90,12 @@ func _process(delta: float) -> void:
 		GlobalSound.play_sound("menu/scroll")
 		current_difficulty -= 1
 		$left_arrow.stop()
-		$left_arrow.play("left_confirm")
+		$left_arrow.play("leftConfirm")
 	elif Input.is_action_just_pressed("ui_right") && controllable:
 		GlobalSound.play_sound("menu/scroll")
 		current_difficulty += 1
 		$right_arrow.stop()
-		$right_arrow.play("right_confirm")
+		$right_arrow.play("rightConfirm")
 	if Input.is_action_just_pressed("ui_accept") && controllable:
 		GlobalSound.play_sound("menu/confirm")
 		controllable = false
@@ -138,9 +139,9 @@ func _process(delta: float) -> void:
 		$songs_label.text += song.display_name
 	
 	if !$left_arrow.is_playing():
-		$left_arrow.play("left_idle")
+		$left_arrow.play("leftIdle")
 	if !$right_arrow.is_playing():
-		$right_arrow.play("right_idle")
+		$right_arrow.play("rightIdle")
 		
 	for prop in $props.get_children():
 		if !prop.is_playing() && controllable:
